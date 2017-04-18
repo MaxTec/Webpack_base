@@ -1,0 +1,1 @@
+webpackJsonp([0],{"./src/js/split.js":function(s,c,o){"use strict";console.log("split")}});
