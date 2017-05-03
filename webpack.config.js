@@ -51,13 +51,23 @@ const config = {
         publicPath: publicPath,
         filename: '[name].js'
     },
+    externals: {
+        jquery: 'jQuery'
+    },
     module: {
-        rules: [{
-                test: /\.pug$/,
+        rules: [
+            // {
+            //     test: /\.pug$/,
+            //     use: [{
+            //         loader: 'pug-loader',
+            //         options: { pretty: !minify } //Revisar
+            //     }],
+            // },
+            {
+                test: /\.ejs$/,
                 use: [{
-                    loader: 'pug-loader',
-                    options: { pretty: !minify } //Revisar
-                }],
+                    loader: 'ejs-render-loader'
+                }]
             },
             {
                 test: /\.styl$/,
@@ -86,16 +96,16 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'templates/index.html',
-            template: './src/templates/index.pug',
-            title: 'Custom template',
+            template: 'ejs-render!./src/templates/index.ejs',
+            title: 'Custom Index',
             minify: {
                 collapseWhitespace: minify
             },
             alwaysWriteToDisk: true
         }), new HtmlWebpackPlugin({
-            filename: 'templates/pagedos.html',
-            template: './src/templates/pagedos.pug',
-            title: 'Custom template',
+            filename: 'templates/contacto.html',
+            template: 'ejs-render!./src/templates/contacto.ejs',
+            title: 'Custom Contacto',
             minify: {
                 collapseWhitespace: minify
             },

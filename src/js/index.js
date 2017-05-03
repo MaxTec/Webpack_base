@@ -1,4 +1,8 @@
 require('../styles/estilos.styl');
+import $ from 'jquery';
+$("#button").on('click', function() {
+    alert('hola Max');
+});
 console.log("Hola Max");
 class Person {
 
