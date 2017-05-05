@@ -96,7 +96,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'templates/index.html',
-            template: 'ejs-render!./src/templates/index.ejs',
+            template: './src/templates/index.ejs',
             title: 'Custom Index',
             minify: {
                 collapseWhitespace: minify
@@ -104,7 +104,7 @@ const config = {
             alwaysWriteToDisk: true
         }), new HtmlWebpackPlugin({
             filename: 'templates/contacto.html',
-            template: 'ejs-render!./src/templates/contacto.ejs',
+            template: './src/templates/contacto.ejs',
             title: 'Custom Contacto',
             minify: {
                 collapseWhitespace: minify
